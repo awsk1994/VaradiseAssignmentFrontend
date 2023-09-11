@@ -11,15 +11,17 @@ function Main() {
     // TODO: if no login cookie, re-direct to login
 
     return (
-        <div>
+        <div style={{height: '100%'}}>
             <div>
                 <span>SEATTLE BUILDING DATA VISUALIZATION</span>
                 <button onClick={() => setTab(TabOverview)}>Overview</button>
                 <button onClick={() => setTab(TabCharts)}>Charts</button>
             </div>
+
+            {tab == TabOverview && <Overview/>}
+            {tab == TabCharts && <Chart />}
             
-            { tab == TabOverview && <Overview/> }
-            { tab == TabCharts && <Chart/> }            
+            <button>Sign Out</button>
         </div>
     )
 }
