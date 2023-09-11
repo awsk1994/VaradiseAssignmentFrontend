@@ -11,17 +11,25 @@ function Main() {
     // TODO: if no login cookie, re-direct to login
 
     return (
-        <div style={{height: '100%'}}>
+        <div style={{ height: '100%' }}>
             <div>
                 <span>SEATTLE BUILDING DATA VISUALIZATION</span>
-                <button onClick={() => setTab(TabOverview)}>Overview</button>
-                <button onClick={() => setTab(TabCharts)}>Charts</button>
+                <button
+                    className="w-32 h-10 bg-gray-200 rounded-md mx-3"
+                    onClick={() => setTab(TabOverview)}>
+                    Overview
+                </button>
+                <button
+                    className="w-32 h-10 bg-gray-200 rounded-md mx-3"
+                    onClick={() => setTab(TabCharts)}>
+                    Charts
+                </button>
             </div>
 
-            {tab == TabOverview && <Overview/>}
+            {tab == TabOverview && <Overview />}
             {tab == TabCharts && <Chart />}
-            
-            <button>Sign Out</button>
+
+            <button className="rounded-md" style={{backgroundColor: 'red'}}>Sign Out</button>
         </div>
     )
 }
